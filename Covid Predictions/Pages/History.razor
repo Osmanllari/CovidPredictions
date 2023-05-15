@@ -1,0 +1,54 @@
+﻿@page "/history"
+
+@using Covid_Predictions.Data
+@inject WeatherForecastService ForecastService
+
+<PageTitle>History of Predictions</PageTitle>
+
+<h1 style="color: white">History of Predictions</h1>
+
+
+@if (forecasts == null)
+{
+    <p><em>You have not made any predictions yet.</em></p>
+}
+else
+{
+    <table class="table" style="color: white">
+        <thead>
+            <tr>
+                <th>Country</th>
+                <th>ISO Code</th>
+                <th>Population</th>
+                <th>Date</th>
+                <th>Estimated Cases</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var forecast in forecasts)
+            {
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>@forecast.Date.ToShortDateString()</td>
+                    <td></td>
+                    <!--<td>@forecast.Location</td>-->
+                    <!--<td>@forecast.IsoCode</td>-->
+                    <!--<td>@forecast.Population</td>-->
+                    <!--<td>@forecast.Date.ToShortDateString()</td>-->
+                    <!--<td>@forecast.TemperatureC</td>-->
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    private WeatherForecast[]? forecasts;
+
+    protected override async Task OnInitializedAsync()
+    {
+        forecasts = await ForecastService.GetForecastAsync(DateTime.Now);
+    }
+}

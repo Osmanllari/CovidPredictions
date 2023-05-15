@@ -1,0 +1,36 @@
+.country-select[b-rfmh2rzrfz] {
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    width: 100%;
+    max-width: 400px;
+}
+
+.country-select:focus[b-rfmh2rzrfz] {
+    border-color: #80bdff;
+    box-shadow: 0 0 0 0.25rem rgba(0, 123, 255, 0.25);
+}
+
+.estimation[b-rfmh2rzrfz] {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    color: #333;
+    text-shadow: 1px 1px 1px #ccc;
+    margin: 10px;
+}
+
+.prediction[b-rfmh2rzrfz] {
+    font-size: 36px;
+    font-style: italic;
+    text-align: center;
+    color: #555;
+    text-shadow: 2px 2px 2px #ccc;
+}
+
