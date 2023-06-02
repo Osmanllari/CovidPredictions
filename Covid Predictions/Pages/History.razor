@@ -1,7 +1,7 @@
 ﻿@page "/history"
 
 @using Covid_Predictions.Data
-@inject WeatherForecastService ForecastService
+@inject CovidForecastHistoryService ForecastService
 
 <PageTitle>History of Predictions</PageTitle>
 
@@ -27,17 +27,14 @@ else
         <tbody>
             @foreach (var forecast in forecasts)
             {
+                <!-- History not functional yet-->
+
                 <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td>@forecast.Date.ToShortDateString()</td>
-                    <td></td>
                     <!--<td>@forecast.Location</td>-->
                     <!--<td>@forecast.IsoCode</td>-->
                     <!--<td>@forecast.Population</td>-->
                     <!--<td>@forecast.Date.ToShortDateString()</td>-->
-                    <!--<td>@forecast.TemperatureC</td>-->
+                    <!--<td>@forecast.Result</td>-->
                 </tr>
             }
         </tbody>
@@ -45,10 +42,10 @@ else
 }
 
 @code {
-    private WeatherForecast[]? forecasts;
+    private CovidForecastHistory[]? forecasts;
 
     protected override async Task OnInitializedAsync()
     {
-        forecasts = await ForecastService.GetForecastAsync(DateTime.Now);
+        forecasts = await ForecastService.GetForecastsHistoryAsync(DateTime.Now);
     }
 }

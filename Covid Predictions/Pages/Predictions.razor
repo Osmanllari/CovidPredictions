@@ -220,7 +220,7 @@
 
             var content = new StringContent(payload, Encoding.UTF8, "application/json");
 
-            // Send the HTTP request and collect the prediction result
+            // Send the HTTP request and get back the prediction result
             var response = await client.PostAsync("http://20.22.70.70:80/api/v1/service/covidendpoint02/score", content);
             var result = await response.Content.ReadAsStringAsync();
 
@@ -254,6 +254,7 @@
         {
             Console.WriteLine($"Error executing Azure ML service: {ex.Message}");
         }
+    
     }
 
 }
